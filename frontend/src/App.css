@@ -1,0 +1,148 @@
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.close:hover,
+.close:focus {
+  color: #000000; /* Darker color */
+  font-weight: bolder;
+}
+/* App.css - component and form specific styles with animations */
+
+/* ContactForm container */
+.contact-form {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 2rem auto;
+  animation: fadeInSlideDown 0.6s ease forwards;
+}
+
+/* Form element styling */
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Label styling */
+.contact-form label {
+  font-weight: 600;
+  color: #374151; /* gray-700 */
+  margin-bottom: 0.4rem;
+  display: block;
+  user-select: none;
+}
+
+/* Input fields styling */
+.contact-form input[type="text"] {
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1.5px solid #d1d5db; /* gray-300 */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  outline-offset: 2px;
+}
+
+.contact-form input[type="text"]:focus {
+  border-color: #2563eb; /* blue-600 */
+  box-shadow: 0 0 8px rgba(37, 99, 235, 0.4);
+}
+
+/* Submit button styling */
+.contact-form button[type="submit"] {
+  background: linear-gradient(135deg, #8b5cf6, #06b6d4);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(107, 33, 168, 0.3);
+  transition: background 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+}
+
+.contact-form button[type="submit"]:hover,
+.contact-form button[type="submit"]:focus {
+  background: linear-gradient(135deg, #7c3aed, #0891b2);
+  box-shadow: 0 8px 20px rgba(124, 58, 237, 0.5);
+  transform: translateY(-3px) scale(1.05);
+  outline: none;
+}
+
+/* Animations */
+
+/* Fade in and slide down animation for the form container */
+@keyframes fadeInSlideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Pulsating animation for inputs on focus */
+@keyframes pulseGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 8px rgba(37, 99, 235, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 14px rgba(37, 99, 235, 0.7);
+  }
+}
+
+.contact-form input[type="text"]:focus {
+  animation: pulseGlow 2s infinite ease-in-out;
+}
+
+/* Button press animation */
+.contact-form button[type="submit"]:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.4);
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .contact-form {
+    padding: 1.5rem;
+    max-width: 90%;
+  }
+
+  .contact-form button[type="submit"] {
+    font-size: 1rem;
+    padding: 0.65rem 1.2rem;
+  }
+}
