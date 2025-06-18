@@ -9,7 +9,7 @@ function App() {
   const [currentContact, setCurrentContact] = useState({});
 
   useEffect(() => {
-    fetchContacts();
+    fetchContacts("https://contacts-sepia.vercel.app/");
   }, []);
   const fetchContacts = async () => {
     const response = await fetch("https://contacts-sepia.vercel.app/contacts");
