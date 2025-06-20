@@ -1,6 +1,12 @@
 from flask import request,jsonify
 from config import app, db
 from models import Contact
+import re
+
+#Checks for valid email
+def ends_with_email(string):
+    email_pattern = r'[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}'
+    return re.search(email_pattern + r'$', string) is None
 
 #Accept new contacts
 @app.route("/contacts",methods = ["GET"])
@@ -24,7 +30,9 @@ def create_contact():
     
     existing_contact = Contact.query.filter_by(first_name = first_name,last_name=last_name,email=email).first()
     if existing_contact:
-        return jsonify({"message":"Cant replicate"}),400
+        return jsonify({"message":"Contact already exists"}),400
+    if ends_with_email(email):
+        return jsonify({"message":"Invalid email"}),400
 
     new_contact = Contact(first_name = first_name,last_name=last_name,email=email)
     try:
