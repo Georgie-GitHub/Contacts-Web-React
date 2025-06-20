@@ -7,7 +7,7 @@ const ContactList = ({ contacts, updateContact, updateCallback }) => {
         method: "DELETE",
       };
       const response = await fetch(
-        `https://contacts-sepia.vercel.app/delete_contact/${id}`,
+        `http://127.0.0.1:5000/delete_contact/${id}`,
         options
       );
       if (response.status === 200) {
@@ -26,9 +26,9 @@ const ContactList = ({ contacts, updateContact, updateCallback }) => {
       <table>
         <thead>
           <tr>
-            <th>First Name &nbsp;&nbsp;&nbsp;&nbsp;</th>
-            <th>Last Name &nbsp;&nbsp;&nbsp;&nbsp;</th>
-            <th>Email&nbsp;&nbsp;&nbsp;&nbsp;</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
             <th>Actions</th>
           </tr>
         </thead>
