@@ -28,7 +28,7 @@ const ContactList = ({ contacts, updateContact, updateCallback }) => {
           <tr>
             <th>First Name &nbsp;&nbsp;&nbsp;&nbsp;</th>
             <th>Last Name &nbsp;&nbsp;&nbsp;&nbsp;</th>
-            <th>Email</th>
+            <th>Email&nbsp;&nbsp;&nbsp;&nbsp;</th>
             <th>Actions</th>
           </tr>
         </thead>
